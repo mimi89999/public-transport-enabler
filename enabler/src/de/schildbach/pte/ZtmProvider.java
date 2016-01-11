@@ -17,6 +17,8 @@
 
 package de.schildbach.pte;
 
+import com.google.common.base.Charsets;
+
 import de.schildbach.pte.dto.Product;
 
 /**
@@ -31,6 +33,9 @@ public class ZtmProvider extends AbstractHafasProvider
 	public ZtmProvider()
 	{
 		super(NetworkId.ZTM, API_BASE, "pn", PRODUCTS_MAP);
+
+		setJsonGetStopsEncoding(Charsets.UTF_8);
+		setJsonNearbyLocationsEncoding(Charsets.UTF_8);
 	}
 
 	@Override
